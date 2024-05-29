@@ -16,20 +16,21 @@
           "background": "#ef5350",
           "foreground": "#FFFB38",
           "style": "diamond",
-          "template": "<parentBackground>\ue0b0</> \uf292 ",
+          "template": " \uf0e7 ",
           "type": "root"
         },
         {
-          "background": "#FF9248",
-          "foreground": "#2d3436",
+          "background": "#91ddff",
+          "foreground": "#100e23",
           "powerline_symbol": "\ue0b0",
           "properties": {
-            "folder_icon": " \uf07b ",
-            "home_icon": "\ue617",
-            "style": "folder"
+            "folder_icon": "\uf115",
+            "folder_separator_icon": " \ue0b1 ",
+            "home_icon": "\ueb06",
+            "style": "agnoster"
           },
           "style": "powerline",
-          "template": " \uf07b\uea9c {{ .Path }} ",
+          "template": "{{ .Path }} ",
           "type": "path"
         },
         {
