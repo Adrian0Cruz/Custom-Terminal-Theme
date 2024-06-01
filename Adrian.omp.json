@@ -9,7 +9,7 @@
           "foreground": "#ffffff",
           "leading_diamond": "\u256d\u2500\ue0b6",
           "style": "diamond",
-          "template": "\uf120 {{ .Name }} ",
+          "template": "\uf489 {{ .Name }} ",
           "type": "shell"
         },
         {
@@ -30,7 +30,7 @@
             "style": "agnoster"
           },
           "style": "powerline",
-          "template": "{{ .Path }} ",
+          "template": " {{ .Path }} ",
           "type": "path"
         },
         {
@@ -207,12 +207,25 @@
           "leading_diamond": "\ue0b6",
           "trailing_diamond": "<transparent,background>\ue0b2</>",
           "properties": {
+            "alpine": "\uf300",
+            "arch": "\uf303",
+            "centos": "\uf304",
+            "debian": "\uf306",
+            "elementary": "\uf309",
+            "fedora": "\uf30a",
+            "gentoo": "\uf30d",
             "linux": "\ue712",
-            "macos": "\ue711",
-            "windows": "\ue70f"
+            "macos": "\uf179 ",
+            "manjaro": "\uf312",
+            "mint": "\uf30f",
+            "opensuse": "\uf314",
+            "raspbian": "\uf315",
+            "ubuntu": "\uf31b ",
+            "windows": "\ue62a ",
+            "wsl": "\ue712"
           },
           "style": "diamond",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
+          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}}",
           "type": "os"
         },
         {
@@ -220,7 +233,8 @@
           "background_templates": [
             "{{if eq \"Charging\" .State.String}}#b8e994{{end}}",
             "{{if eq \"Discharging\" .State.String}}#fff34e{{end}}",
-            "{{if eq \"Full\" .State.String}}#33DD2D{{end}}"
+            "{{if eq \"Full\" .State.String}}#33DD2D{{end}}",
+	    "{{if lt .Percentage 30}}#ff0000{{else if gt .Percentage 70}}#00ff00{{end}}"
           ],
           "foreground": "#262626",
           "invert_powerline": true,
@@ -231,19 +245,19 @@
             "discharging_icon": "\ue234 "
           },
           "style": "powerline",
-          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 ",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 ",
           "type": "battery"
         },
         {
           "background": "#40c4ff",
-          "foreground": "#ffffff",
+          "foreground": "#000000",
           "invert_powerline": true,
           "leading_diamond": "\ue0b2",
           "properties": {
             "time_format": "15:04, Monday, 2-01-2006"
           },
           "style": "diamond",
-          "template": "⌚{{ .CurrentDate | date .Format }}",
+          "template": "⌚{{ .CurrentDate | date .Format }} \uf073 ",
           "trailing_diamond": "\ue0b4",
           "type": "time"
         }
