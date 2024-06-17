@@ -234,7 +234,7 @@
             "{{if eq \"Charging\" .State.String}}#b8e994{{end}}",
             "{{if eq \"Discharging\" .State.String}}#fff34e{{end}}",
             "{{if eq \"Full\" .State.String}}#33DD2D{{end}}",
-	    "{{if lt .Percentage 30}}#ff0000{{else if gt .Percentage 70}}#00ff00{{end}}"
+            "{{if lt .Percentage 30}}#ff0000{{else if gt .Percentage 70}}#00ff00{{end}}"
           ],
           "foreground": "#262626",
           "invert_powerline": true,
@@ -265,11 +265,11 @@
       "type": "prompt"
     },
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "#21c7a8",
+          "foreground": "#21c7c7",
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
@@ -287,14 +287,53 @@
           "type": "spotify"
         },
         {
-          "foreground": "#22da6e",
-          "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+          "foreground": "#e0f8ff",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }}"
+          ],
           "properties": {
             "always_enabled": true
           },
           "style": "plain",
-          "template": "\ue285\ue285",
+          "template": "\ue285\ueab6 ",
           "type": "status"
+        }
+      ],
+      "newline": true
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "lightGreen",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}red{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "powerline",
+          "template": "\u279c ",
+          "type": "status"
+        },
+        {
+          "style": "plain",
+          "template": "😺💬<#FF8000> Meow! What could we do now? ...</>",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#FF8000",
+          "style": "plain",
+          "template": "😀💬<#FF8000> ~ </>",
+          "type": "text"
         }
       ],
       "type": "prompt"
